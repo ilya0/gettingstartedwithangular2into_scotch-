@@ -4,7 +4,10 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+      "start": "concurrently \"npm run tsc:w\" \"npm run lite\"",
+  "lite": "lite-server",
+  "tsc": "tsc",
+  "tsc:w": "tsc -w",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -29,9 +32,10 @@
     "@angular/cli": "1.4.3",
     "@angular/compiler-cli": "^4.2.4",
     "@angular/language-service": "^4.2.4",
-    "@types/jasmine": "~2.5.53",
+    "@types/core-js": "^0.9.43",
+    "@types/jasmine": "^2.5.54",
     "@types/jasminewd2": "~2.0.2",
-    "@types/node": "~6.0.60",
+    "@types/node": "^6.0.89",
     "codelyzer": "~3.1.1",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
@@ -44,6 +48,6 @@
     "protractor": "~5.1.2",
     "ts-node": "~3.2.0",
     "tslint": "~5.3.2",
-    "typescript": "~2.3.3"
+    "typescript": "^2.3.4"
   }
 }
